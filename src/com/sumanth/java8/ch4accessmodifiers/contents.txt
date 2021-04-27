@@ -1,0 +1,12 @@
+1) Java source file structure
+2) Class level modifiers
+3) Member level modifiers
+4) interfaces
+    Declaration and Implementation
+    extends vs implements
+    Interface methods, variables
+    Naming conflicts methods, variables
+    Marker Interfaces
+        Serializable, Cloneable, RandomAccess, SingleThreadModel
+    Adapter Classes
+    Abstract Classes vs Interfaces (we can implement multiple interfaces but not abstract classes)
