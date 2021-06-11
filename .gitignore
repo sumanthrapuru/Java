@@ -1,4 +1,5 @@
 # Default ignored files
 /out
 /.idea
-IdeaUltimateProjects.iml
+IdeaProjects.iml
+*.txt
