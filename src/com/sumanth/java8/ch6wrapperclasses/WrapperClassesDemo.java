@@ -1,19 +1,12 @@
-package com.sumanth.java8.ch6autoboxing;
+package com.sumanth.java8.ch6wrapperclasses;
 
 public class WrapperClassesDemo {
     public static void main(String[] args) {
-        Number number = null;
+        Number number = null;//Byte Short Integer Long Float Double
         Character character = null;
         Boolean bool = null;
-        Object obj = number;
-        obj = character;
-        obj = bool;
-        Integer intObj = 55;
-        intObj = Integer.valueOf(55);
-        Double doubleObj = Double.valueOf(30);
-        intObj = Integer.valueOf("10");
-        intObj = Integer.valueOf("10", 2);
 
+        Integer intObj = 55;//Integer.valueOf(55);
         intObj.byteValue();
         intObj.shortValue();
         intObj.intValue();
@@ -21,13 +14,15 @@ public class WrapperClassesDemo {
         intObj.floatValue();
         intObj.doubleValue();
 
-        int i = Integer.valueOf("10").intValue();
-        i = Integer.parseInt("10");
+        intObj = Integer.valueOf("10");
+        intObj = Integer.valueOf("10", 2);
+        intObj.toString();
 
-        Integer.toString(10);
+        String integerString = Integer.toString(10);
+        int i = Integer.parseInt(integerString);//Integer.valueOf("10").intValue();
 
         intObj.compareTo(10);
-        System.out.println(new Boolean(true).compareTo(false));// false true
+        System.out.println(new Boolean(true).compareTo(false));// sorted order for boolean {false, true}
 
         intObj.equals(10);
         System.out.println(intObj == Integer.valueOf(2));//true

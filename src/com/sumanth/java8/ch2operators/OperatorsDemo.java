@@ -1,7 +1,15 @@
 package com.sumanth.java8.ch2operators;
 
 public class OperatorsDemo {
-    public static void main(String[] args){
+    public static void main(String[] args) {
+        // Arithmetic * / % + - ++ --
+        // Assignment = += -= /= *= %=
+        // Relational == != < > <= >=
+        // Bitwise & ^ | ~
+        // Logical or Boolean operator && || ! ^
+        // Conditional Operator ? :
+        // instanceof operator
+
         //1) increment decrement (can't apply to boolean)
         byte i = 10;
         i++;// i = (type of i) i + 1
@@ -13,10 +21,10 @@ public class OperatorsDemo {
         int x;
         //x = 10 / 0;//RE / by zero
         double d;
-        d = 10/0.0;
+        d = 10 / 0.0;
         System.out.println(d);//Infinity
-        System.out.println(-10.0/0);//-Infinity
-        System.out.println(0.0/0);//NaN
+        System.out.println(-10.0 / 0);//-Infinity
+        System.out.println(0.0 / 0);//NaN
 
         //3) Relational operators < > <= >= (can't apply to boolean, objects)
         //4) Equality operators == != (apply to all primitives, objs)
@@ -29,7 +37,7 @@ public class OperatorsDemo {
         Object[] objArr = new Object[10];
         objArr[0] = "str";
         Object obj = objArr[0];
-        if(obj instanceof String){//CE there should be parent child relationship
+        if (obj instanceof String) {//CE there should be parent child relationship
             System.out.println((String) obj);
         }
         System.out.println(null instanceof String);//false
@@ -45,7 +53,7 @@ public class OperatorsDemo {
 
         //7) short circuit && ||
 
-        System.out.println((byte)130);//    1 0010110 | 1101001 + 1 | 1101010 | -106
+        System.out.println((byte) 130);//    1 0010110 | 1101001 + 1 | 1101010 | -106
 
         //8) assignment operators
         //%= /= *= += -= &= |= ^= >>= >>>=(unsigned right shift)
@@ -86,9 +94,6 @@ public class OperatorsDemo {
             &&
             ||
          */
-        //ternary ?:
-        //assignment operators
-
         //new(NoClassDefFoundError) newInstance(ClassNotFoundException) will always call no arg constructor
         try {
             Class.forName("com.sumanth.java8.ch2operators.OperatorsDemo").newInstance();
