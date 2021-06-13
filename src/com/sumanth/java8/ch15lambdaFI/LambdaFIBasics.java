@@ -1,7 +1,15 @@
 package com.sumanth.java8.ch15lambdaFI;
 
+import java.util.*;
+import java.util.function.*;
+
+@FunctionalInterface
 interface Sum {
-    int sum(int a, int b);
+    void sum(int a, int b);
+
+    static void staticGreeting(){
+        System.out.println("Greeting from static method");
+    }
 }
 
 interface Greetings {
@@ -12,17 +20,10 @@ interface Greetings2 {
     void greet(String msg);
 }
 
-@FunctionalInterface
-interface FunInterface {
-    void m1();
-}
-
-interface FunInterface2 {
-    int m1(String s);
-}
-
-interface FunInterface3 {
-    int m1(int a, int b);
+class Greetings3{
+    Greetings3(String str) {
+        System.out.println(str);
+    }
 }
 
 public class LambdaFIBasics {
@@ -36,9 +37,39 @@ public class LambdaFIBasics {
         Greetings2 greetings2 = msg -> System.out.println("Hello World " + msg);
         greetings2.greet("Java");
 
-        FunInterface fi = () -> System.out.println("hi");
-        FunInterface2 fi2 = String::length;
-        FunInterface3 fi3 = (a, b) -> a % b;
+        //Predefined FI
+        Predicate<String> stringPredicate = msg -> msg.equals("sumanth");
+        stringPredicate.test("sumanth");
+        Function<String, String> stringFunction = (s) -> s+":"+s.length();
+        stringFunction.apply("sumanth");
+        Consumer<String> stringConsumer = msg -> System.out.println(msg.toLowerCase());
+        stringConsumer.accept("sumanth");
+        Supplier<Double> generateDouble = Math::random;
+        generateDouble.get();
+        UnaryOperator<String> transformToUppercase = String::toUpperCase;
+        transformToUppercase.apply("Sumanth");
+
+        //Method Reference
+        //1) static method reference
+        Greetings greetingsStaticReference = Sum::staticGreeting;
+        greetingsStaticReference.greet();
+        //2) instance method reference
+        LambdaFIBasics lambdaFIBasics = new LambdaFIBasics();
+        Greetings greetingsInstanceReference = lambdaFIBasics::instanceGreeting;
+        greetingsInstanceReference.greet();
+        //3) ref to instance method of an arbitrary object of a particular type
+        String[] names = {"sumanth", "Sumanth", "Reddy", "Adam", "adam"};
+        Arrays.sort(names, String::compareToIgnoreCase);
+        System.out.println(Arrays.toString(names));
+        //4)
+        Greetings2 greetings21 = Greetings3::new;
+        greetings21.greet("sumanth");
+
+        List<String> list = new ArrayList<>();
+        list.forEach(System.out::println);
+        Map<String, Integer> map = new HashMap<>();
+        map.put("A", 1);
+        map.forEach((k, v) -> System.out.println(k +" "+v));
 
         Runnable r = () -> System.out.println(Thread.currentThread().getName());
         new Thread(r).start();
@@ -47,4 +78,7 @@ public class LambdaFIBasics {
 
     }
 
+    public void instanceGreeting(){
+        System.out.println("greetings from instance me");
+    }
 }
