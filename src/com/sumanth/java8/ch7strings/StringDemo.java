@@ -9,19 +9,18 @@ public class StringDemo {
         String s1 = "sumanth";//"sumanth".intern();
         String s2 = new String("sumanth");
         String s3 = s2.intern();
-        System.out.printf("s1 == s2 : %b", s1 == s2);
-        System.out.printf("\ns1 == s3 : %b\n", s1 == s3);
+        System.out.printf("s1 == s2 : %b", s1 == s2);//false
+        System.out.printf("\ns1 == s3 : %b\n", s1 == s3);//true
 
-        System.out.printf("s1 length is: %d,\n" ,
-                s1.length());
+        System.out.printf("s1 length is: %d,\n", s1.length());
 
-        String s4 = s1 + s2;
+        String s4 = s1 + s2;//not efficient creates new string
         s1.concat(s2);//raises NPE
 
         s1.charAt(5);//raises IOBE
 
         System.out.println(s1.substring(5));//th
-        System.out.println(s1.substring(5,7));//th(both are inclusive)
+        System.out.println(s1.substring(1, 5));//end-1
 
         s1.replace('s', 'S');
         s1.replaceAll("man", "han");
@@ -32,16 +31,17 @@ public class StringDemo {
         String[] resArray = s5.split(" ", 2);
         Arrays.stream(resArray).forEach(System.out::println);
 
+
         //TODO: write custom immutable obj
 
         //any change in string new obj in heap
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Hi").append(" ").append(1);
-        stringBuilder.insert(3, 2);
-        stringBuilder.delete(4, 5);//start, end-1
+        stringBuilder.insert(3, "sumanth");
+        stringBuilder.delete(3, 5);//start, end-1
         stringBuilder.reverse();
         stringBuilder.toString();
-        System.out.println(stringBuilder);
+        System.out.println(stringBuilder);//1htnam iH
 
     }
 }
