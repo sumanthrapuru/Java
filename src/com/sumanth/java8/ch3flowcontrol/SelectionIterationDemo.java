@@ -16,7 +16,7 @@ public class SelectionIterationDemo {
                 System.out.println("hi");
 
        int i = 9;
-       switch(i){//till int & its wrapper class obj & enum & string
+       switch(i){//byte short int & its wrapper class obj & enum & string
            case 1://always constant exp but not variable
                System.out.println(
 

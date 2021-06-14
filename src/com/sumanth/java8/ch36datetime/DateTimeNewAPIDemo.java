@@ -1,4 +1,4 @@
-package com.sumanth.java8.datetime;
+package com.sumanth.java8.ch36datetime;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
