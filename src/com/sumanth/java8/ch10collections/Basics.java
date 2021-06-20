@@ -12,7 +12,7 @@ import java.util.concurrent.PriorityBlockingQueue;
  */
 public class Basics {
     Collection col;
-    static List list;
+    static List list = new ArrayList();
     static Set set;
     static Queue queue;
     static Map<String, String> map;
@@ -57,5 +57,14 @@ public class Basics {
         NavigableMap navigableMap = treeMap;
         SortedMap sortedMap = navigableMap;
         map = sortedMap;
+
+        List<String> list = new ArrayList<String>(Arrays.asList("j", "k"));
+        Iterator iterator = list.iterator();
+        while(iterator.hasNext()){
+            iterator.next();
+        }
+        //list.remove(1);
+        //iterator.next();//ConcurrentModificationException//NoSuchElementException
+
     }
 }
