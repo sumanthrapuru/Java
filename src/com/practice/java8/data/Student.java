@@ -1,4 +1,4 @@
-package com.practice.data;
+package com.practice.java8.data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +52,11 @@ public class Student {
 
     public Student(String s) {
         this.name = s;
+    }
+
+    public Student(String s, String gender) {
+        this.name = s;
+        this.gender = gender;
     }
 
     public String getGender() {

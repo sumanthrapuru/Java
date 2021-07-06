@@ -1,7 +1,7 @@
-package com.practice.lambda;
+package com.practice.java8.fi;
 
-import com.practice.data.Student;
-import com.practice.data.StudentDataBase;
+import com.practice.java8.data.Student;
+import com.practice.java8.data.StudentDataBase;
 
 import java.util.List;
 import java.util.function.BiConsumer;

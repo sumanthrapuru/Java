@@ -1,4 +1,4 @@
-package com.practice.data;
+package com.practice.java8.data;
 
 import java.util.Arrays;
 import java.util.List;
