@@ -3,3 +3,4 @@
 /.idea
 IdeaProjects.iml
 *.txt
+.gradle
