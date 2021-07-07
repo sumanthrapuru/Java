@@ -5,9 +5,8 @@ import com.practice.java8.data.StudentDataBase;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
-public class StudentAPIOperationsExample {
+public class StreamAPIOperationsExample {
     public List<String> studentNames(List<Student> students){
         return students.stream()
                 .map(Student::getName)
@@ -117,7 +116,7 @@ public class StudentAPIOperationsExample {
     //limit     finaAny findFirst       allMatch anyMatch noneMatch
 
     public static void main(String[] args) {
-        System.out.println(new StudentAPIOperationsExample().studentNameChainOpt(StudentDataBase.getAllStudents()));
+        System.out.println(new StreamAPIOperationsExample().studentNameChainOpt(StudentDataBase.getAllStudents()));
 
     }
 }
