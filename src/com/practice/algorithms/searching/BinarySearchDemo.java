@@ -1,6 +1,7 @@
 package com.practice.algorithms.searching;
 
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class BinarySearchDemo {
     public int binarySearch(int[] arr, int element) {
@@ -43,7 +44,8 @@ public class BinarySearchDemo {
         int start = 0;
         int end = arr.length;
         int mid;
-        Function<Integer, Boolean> checkCondition = (midIndex) -> {
+        //check for repetition considering boundaries
+        Predicate<Integer> isElementAsPerReq = (midIndex) -> {
             if (isFirstElementReq) {
                 return midIndex == 0 || arr[midIndex - 1] < element;
             } else {
@@ -57,7 +59,7 @@ public class BinarySearchDemo {
             } else if (arr[mid] < element) {
                 start = mid + 1;
             } else if (arr[mid] == element) {
-                if (checkCondition.apply(mid)) {
+                if (isElementAsPerReq.test(mid)) {
                     return mid;
                 } else {
                     if (isFirstElementReq) {
