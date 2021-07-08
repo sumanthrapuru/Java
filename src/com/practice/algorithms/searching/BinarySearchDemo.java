@@ -75,7 +75,7 @@ public class BinarySearchDemo {
 
     public static void main(String[] args) {
         //int index = new BinarySearchDemo().binarySearch(new int[]{1, 1, 2, 2, 4, 5}, 2);
-        int index = new BinarySearchDemo().binarySearchItr(new int[]{2, 2, 2, 2, 2, 2}, 2, false);
+        int index = new BinarySearchDemo().binarySearchItr(new int[]{1, 2, 2, 4, 5}, 2, true);
         System.out.println(index);
     }
 }
