@@ -1,8 +1,6 @@
 package com.practice.java8.streams.problems;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class MapOfMapProblemExample {
@@ -25,13 +23,13 @@ public class MapOfMapProblemExample {
     }
 
     public static void main(String[] args) {
-        System.out.println(new MapOfMapProblemExample().getProjectIdToSiteIdToDeviceIdMap(Set.of("Pro1")));
+        System.out.println(getProjectIdToSiteIdToDeviceIdMap(new HashSet<String>(Arrays.asList("Proj1"))));
     }
 }
 
 class ProjectBasicDTO {
     private String projectId;
-    private List<SiteBasicDTO> siteBasicDTOs = List.of(new SiteBasicDTO("Site1"));
+    private List<SiteBasicDTO> siteBasicDTOs = Arrays.asList(new SiteBasicDTO("Site1"));
 
     public ProjectBasicDTO(String projectId) {
         this.projectId = projectId;
@@ -57,7 +55,7 @@ class ProjectBasicDTO {
 class SiteBasicDTO {
     private String siteId;
 
-    private List<DeviceBasicDTO> siteBasicDTOs = List.of(new DeviceBasicDTO("Dev1"));
+    private List<DeviceBasicDTO> siteBasicDTOs = Arrays.asList(new DeviceBasicDTO("Dev1"));
 
     public SiteBasicDTO(String siteId) {
         this.siteId = siteId;
