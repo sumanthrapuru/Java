@@ -8,7 +8,7 @@ public class ImmutableObjPattern {
 
 }
 
-class Person{
+final class Person{
     private final String name;
     private final int age;
     private final Collection<String> friends;
@@ -16,6 +16,7 @@ class Person{
     public Person(String name, int age, List<String> friends) {
         this.name = name;
         this.age = age;
+        //deep copy
         this.friends = friends;
     }
 
@@ -27,7 +28,7 @@ class Person{
         return age;
     }
 
-    public Collection<String> getFriends() {
+    public Collection<String> getFriends() {//deep clone or unmodifiable list
         return Collections.unmodifiableCollection(this.friends);
     }
 }
