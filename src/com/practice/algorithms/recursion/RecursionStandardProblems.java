@@ -61,10 +61,10 @@ public class RecursionStandardProblems {
                 palindrome(str, start+1, end-1);
     }
 
-    public static void main(String[] args) {
-        String s = "geeks ";
-        System.out.println(palindrome(s, 0,  s.length()-1));
-    }
+//    public static void main(String[] args) {
+//        String s = "geeks ";
+//        System.out.println(palindrome(s, 0,  s.length()-1));
+//    }
 
     //rope cutting O(k^n)
     static int maxRopeCount(int[] diffLengths, int ropeLength) {
@@ -171,7 +171,7 @@ public class RecursionStandardProblems {
         str[j] = temp;
     }
 
-//    public static void main(String[] args){
-//        printPermutations("abc".toCharArray(), 0);
-//    }
+    public static void main(String[] args){
+        printPermutations("abc".toCharArray(), 0);
+    }
 }
