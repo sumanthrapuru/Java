@@ -126,33 +126,123 @@ public class ArraysStandardProblems {
             i++;
             freq = 1;
         }
-        if (arr.length == 1 || arr[arr.length-1] != arr[arr.length-2]){
+        if (arr.length == 1 || arr[arr.length - 1] != arr[arr.length - 2]) {
             System.out.format("i: %d freq: %d", arr[i - 1], freq);
         }
     }
 
-    static void stockBuySell() {
-
+    //
+    static int maxProfitStockBuySell(int[] prices, int start, int end) {
+        if (end <= start) return 0;
+        int profit = 0;
+        for (int i = start; i < end; i++) {
+            for (int j = i + 1; j <= end; j++) {
+                if (prices[j] > prices[i]) {
+                    int cur_profit = prices[j] - prices[i] +
+                            maxProfitStockBuySell(prices, start, i - 1) +
+                            maxProfitStockBuySell(prices, j + 1, end);
+                    profit = Math.max(profit, cur_profit);
+                }
+            }
+        }
+        return profit;
     }
 
-    static void trappingRainWater() {
-
+    static int maxProfitStockPrices(int[] prices) {
+        int profit = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] > prices[i - 1]) {
+                profit += prices[i] - prices[i - 1];
+            }
+        }
+        return profit;
     }
 
-    static void maxConsecutive1s() {
-
+    //non negative bar length
+    //array is increasing or decreasing 0 water collected
+    static int trappingRainWater(int[] arr) {
+//        naive solution
+//        int res = 0;
+//        for(int i = 1; i < arr.length-1; i++){
+//            int lmax = arr[i];
+//            for(int j = 0; j<i; j++){
+//                lmax = Math.max(lmax, arr[i]);
+//            }
+//            int rmax = arr[i];
+//            for(int j = i+1; j<arr.length; j++){
+//                rmax= Math.max(rmax, arr[j]);
+//            }
+//            res = res + (Math.min(lmax, rmax) - arr[i]);
+//        }
+        //efficient sol: pre compute lmax rmax
+        int length = arr.length;
+        int res = 0;
+        int[] lmax = new int[length], rmax = new int[length];
+        lmax[0] = arr[0];
+        for (int i = 1; i < length; i++) {
+            lmax[i] = Math.max(arr[i], arr[i - 1]);
+        }
+        rmax[length - 1] = arr[length - 1];
+        for (int i = length - 2; i >= 0; i--) {
+            rmax[i] = Math.max(arr[i], rmax[i + 1]);
+        }
+        for (int i = 1; i < length - 1; i++) {
+            res = res + (Math.min(lmax[i], rmax[i]) - arr[i]);
+        }
+        return res;
     }
 
-    static void maxSubArraySum() {
-
+    //{0, 1, 1, 0, 1, 0} {1, 1, 1} {0,0,0}
+    static int maxConsecutive1s(int[] arr) {
+        int res = 0;
+        int cur = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                cur = 0;
+            } else {
+                cur++;
+                res = Math.max(res, cur);
+            }
+        }
+        return res;
     }
 
-    static void longestEvenOddSubarray() {
-
+    //{-3 8 -2 4 -5 6}
+    static int maxSubArraySum(int[] arr) {
+        int res = arr[0];
+        int curMax = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            curMax = Math.max(curMax + arr[i], arr[i]);
+            res = Math.max(res, curMax);
+        }
+        return res;
     }
 
-    static void maxCircularSumSubarray() {
+    static int longestEvenOddSubarray(int[] arr) {
+        int res = 1;
+        int cur = 1;
+        for (int i = 1; i < arr.length; i++) {
+            if ((arr[i] % 2 == 0 && arr[i - 1] % 2 != 0) ||
+                    (arr[i] % 2 == 0 && arr[i - 1] % 2 != 0)) {
+                cur++;
+                res = Math.max(res, cur);
+            } else {
+                cur = 1;
+            }
+        }
+        return res;
+    }
 
+    static int maxCircularSumSubarray(int[] arr) {
+        int max_normal = maxSubArraySum(arr);
+        if (max_normal < 0) return max_normal;
+        int arr_sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            arr_sum += arr[i];
+            arr[i] = -arr[i];
+        }
+        int max_circular = arr_sum + maxSubArraySum(arr);
+        return Math.max(max_normal, max_circular);
     }
 
     static void majorityElement() {
@@ -177,3 +267,4 @@ public class ArraysStandardProblems {
         arr[j] = temp;
     }
 }
+
