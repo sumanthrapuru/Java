@@ -1,6 +1,9 @@
 package com.sumanth.java.java8.ch17datetime;
 
+import java.text.SimpleDateFormat;
 import java.time.*;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class JodaDateTimeDemo {
     public static void main(String[] args) {
@@ -17,12 +20,12 @@ public class JodaDateTimeDemo {
         int m = time.getMinute();
         int s = time.getSecond();
         int nanoSec = time.getNano();
-        System.out.printf("\n%d:%d:%d:%d",h,m,s,nanoSec);
+        System.out.printf("\n%d:%d:%d:%d", h, m, s, nanoSec);
 
         LocalDateTime ldt = LocalDateTime.now();
         System.out.println(ldt);
 
-        LocalDateTime.of(2021, Month.APRIL, 5,19,15,30);
+        LocalDateTime.of(2021, Month.APRIL, 5, 19, 15, 30);
 
         ZoneId zone = ZoneId.systemDefault();
         System.out.println(zone);
@@ -37,5 +40,11 @@ public class JodaDateTimeDemo {
         System.out.printf("age is %d years %d months", p.getYears(), p.getMonths());
 
 
+    }
+
+    static String getDateString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
+        sdf.setTimeZone(TimeZone.getTimeZone("IST"));
+        return sdf.format(new Date(System.currentTimeMillis()));
     }
 }
