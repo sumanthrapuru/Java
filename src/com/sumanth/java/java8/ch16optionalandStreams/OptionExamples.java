@@ -6,11 +6,11 @@ public class OptionExamples {
     public static void main(String[] args) {
         Optional<String> name = Optional.empty();
         name = Optional.ofNullable(null);
-        name = Optional.of("sumanth");
-        if (name.isPresent()) {
-            name.get();
-        }
-        name.orElse("dummy");
+//        name = Optional.of("sumanth");
+//        if (name.isPresent()) {
+//            name.get();
+//        }
+        System.out.println(name.orElse("dummy"));
         name.orElseGet(OptionExamples::getDummyString);
     }
 
