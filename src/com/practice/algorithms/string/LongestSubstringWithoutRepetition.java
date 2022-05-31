@@ -1,7 +1,8 @@
 package com.practice.algorithms.string;
 
 public class LongestSubstringWithoutRepetition {
-    static class Method1 {//time O(n^3)
+    //O(N^3) time
+    static class BruteForceApproach {//time O(n^3)
 
         //find all substrings(n * n-1)/2 and check uniqueness for each substring n
         public static void main(String[] args) {
@@ -41,6 +42,18 @@ public class LongestSubstringWithoutRepetition {
                 visited[str.charAt(z) - 'a'] = true;
             }
             return true;
+        }
+    }
+
+    static class SlidingWindowApproach {
+        public static void main(String[] args) {
+            String str = "abcacbz";
+            for(int i = 0; i < str.length(); i++){
+                boolean[] visited = new boolean[26];
+                for(int j = i; j < str.length(); j++){
+                    //visited[str.]
+                }
+            }
         }
     }
 }

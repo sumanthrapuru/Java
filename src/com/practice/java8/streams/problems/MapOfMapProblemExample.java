@@ -3,6 +3,8 @@ package com.practice.java8.streams.problems;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.toMap;
+
 public class MapOfMapProblemExample {
     static Map<String, Map<String, Set<String>>> getProjectIdToSiteIdToDeviceIdMap(Set<String> projectIds) {
         List<ProjectBasicDTO> projectBasicDTOs = projectIds.stream().map(ProjectBasicDTO::new).collect(Collectors.toList());
