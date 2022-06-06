@@ -1,0 +1,3 @@
+select date_format(order_date, “%M”), count(*)
+from order
+group by date_format(order_date, “%M”);
