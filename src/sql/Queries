@@ -1,3 +1,10 @@
-select date_format(order_date, “%M”), count(*)
-from order
-group by date_format(order_date, “%M”);
+
+how to format date to month
+
+    select date_format(order_date, “%M”), count(*)
+    from order
+    group by date_format(order_date, “%M”);
+
+how to shift time from utc to ist
+
+    date(convert_tz(t.created_on, '+00:00', '+05:30'))
