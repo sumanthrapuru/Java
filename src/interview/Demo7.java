@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 public class Demo7 {
 
+
+    //selection sort
+
     public static void main(String[] args) {
         int[] nums = new int[]{8, 10, 2, 3, 11, 12};
         new Demo7().mergeSort(nums, 0, nums.length-1);
