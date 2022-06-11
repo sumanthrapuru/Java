@@ -24,10 +24,6 @@ index 'table_name_idx' (column, column2)
 
 
 */
-
-}
-
-class Solution {
     public static void main(String[] args) {
         char[][] matrix = {
                 {'X', 'X', 'X', 'X'},
