@@ -1,4 +1,4 @@
-package ds.array;
+package ds.dp.arraypartition;
 
 import java.util.ArrayList;
 import java.util.List;
