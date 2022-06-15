@@ -1,4 +1,4 @@
-package com.java;
+package corejava;
 
 import java.io.*;
 
