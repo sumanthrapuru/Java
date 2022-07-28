@@ -1,11 +1,11 @@
 package dsa.stack;
 
-public class StackArray<Item> {
+public class StackArrayImpl<Item> {
 
 	private Item[] stack;
 	private int numberOfItems;
 	
-	public StackArray(){
+	public StackArrayImpl(){
 		this.stack = ( Item[] ) new Object[1];
 	}
 

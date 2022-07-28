@@ -4,7 +4,7 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		StackLL<Integer> stack = new StackLL<>();
+		StackLLImpl<Integer> stack = new StackLLImpl<>();
 		
 		stack.push(10);
 		stack.push(3);

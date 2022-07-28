@@ -1,6 +1,6 @@
 package dsa.stack;
 
-public class StackLL<T extends Comparable<T>> {
+public class StackLLImpl<T extends Comparable<T>> {
 
 	private Node<T> root;
 	private int count;
