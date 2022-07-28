@@ -1,11 +1,10 @@
-package StackLinkedList;
+package dsa.stack;
 
-public class Stack<T extends Comparable<T>> {
+public class StackLL<T extends Comparable<T>> {
 
 	private Node<T> root;
 	private int count;
 	
-	// O(1) constant time
 	public void push(T newData){
 		
 		this.count++;
@@ -19,12 +18,10 @@ public class Stack<T extends Comparable<T>> {
 		}
 	}
 	
-	// O(1)
 	public int size(){
 		return this.count;
 	}
 	
-	// O(1)
 	public T pop(){
 		T itemToPop = this.root.getData();
 		this.root = this.root.getNextNode();
@@ -32,7 +29,6 @@ public class Stack<T extends Comparable<T>> {
 		return itemToPop;
 	}
 
-	// O(1) constant time
 	public boolean isEmpty(){
 		return this.root == null;
 	}

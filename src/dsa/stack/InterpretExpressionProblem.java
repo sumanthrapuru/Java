@@ -1,14 +1,14 @@
-package DijkstraInterpreter;
+package dsa.stack;
 
 import java.util.Stack;
 
 
-public class Algorithm {
+public class InterpretExpressionProblem {
 
 	private Stack<String> operationStack;
 	private Stack<Double> valueStack;
 	
-	public Algorithm(){
+	public InterpretExpressionProblem(){
 		this.operationStack = new Stack<>();
 		this.valueStack = new Stack<>();
 	}

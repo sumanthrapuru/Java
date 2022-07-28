@@ -1,4 +1,4 @@
-package StackLinkedList;
+package dsa.stack;
 
 public class Node<T extends Comparable<T>> {
 

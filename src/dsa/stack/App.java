@@ -1,13 +1,10 @@
-package StackLinkedList;
+package dsa.stack;
 
 public class App {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		
-		Stack<Integer> stack = new Stack<>();
+		StackLL<Integer> stack = new StackLL<>();
 		
 		stack.push(10);
 		stack.push(3);

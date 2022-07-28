@@ -1,11 +1,11 @@
-package StackArray;
+package dsa.stack;
 
-public class Stack<Item> {
+public class StackArray<Item> {
 
 	private Item[] stack;
 	private int numberOfItems;
 	
-	public Stack(){
+	public StackArray(){
 		this.stack = ( Item[] ) new Object[1];
 	}
 
@@ -19,7 +19,10 @@ public class Stack<Item> {
 	}
 	
 	public Item pop(){
+		if(isEmpty()) return null;
+
 		Item itemToPop = this.stack[--numberOfItems];
+		stack[numberOfItems] = null;//to avoid memory leak
 		
 		if( numberOfItems > 0 && numberOfItems == this.stack.length/4 ){
 			resize(this.stack.length/2);
