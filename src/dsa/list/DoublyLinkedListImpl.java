@@ -4,10 +4,10 @@ public class DoublyLinkedListImpl<T extends Comparable<T>> {
     private Node<T> head;
     private Node<T> tail;
 
-    public void insert(T data){
+    public void insert(T data) {
         Node<T> newNode = new Node<>(data);
 
-        if(tail == null){
+        if (tail == null) {
             tail = newNode;
             head = newNode;
         } else {

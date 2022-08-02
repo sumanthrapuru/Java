@@ -6,26 +6,26 @@ public class MaxItemStackProblem {
     private Stack<Integer> mainStack;
     private Stack<Integer> maxStack;
 
-    public void push(int item){
+    public void push(int item) {
         mainStack.push(item);
-        if(mainStack.size() == 1){
+        if (mainStack.size() == 1) {
             maxStack.push(item);
             return;
         }
-        if(item > maxStack.peek()){
+        if (item > maxStack.peek()) {
             maxStack.push(item);
 
-        }else {
+        } else {
             maxStack.push(maxStack.peek());
         }
     }
 
-    public int pop(){
+    public int pop() {
         maxStack.pop();
         return mainStack.pop();
     }
 
-    public int max(){
+    public int max() {
         return mainStack.peek();
     }
 }

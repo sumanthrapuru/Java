@@ -12,7 +12,7 @@ public class DutchFlagProblem {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1,0, 0, 2, 1};
+        int[] arr = new int[]{1, 0, 0, 2, 1};
         new DutchFlagProblem(arr).solve();
         System.out.println(Arrays.toString(arr));
     }
@@ -25,9 +25,9 @@ public class DutchFlagProblem {
         int pivot = 1;
         int beginOf2 = nums.length - 1;
         while (i <= beginOf2) {
-            if(nums[i] == pivot) {
+            if (nums[i] == pivot) {
                 i++;
-            }else if (nums[i] < pivot) {
+            } else if (nums[i] < pivot) {
                 swap(i, endOf0);
                 i++;
                 endOf0++;
