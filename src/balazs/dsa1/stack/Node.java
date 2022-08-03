@@ -1,4 +1,4 @@
-package dsa.stack;
+package balazs.dsa1.stack;
 
 public class Node<T extends Comparable<T>> {
 

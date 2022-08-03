@@ -1,4 +1,4 @@
-package dsa.array;
+package balazs.dsa1.array;
 
 public class TrappedRainProblem {
 

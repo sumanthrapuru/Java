@@ -1,4 +1,4 @@
-package dsa.array;
+package balazs.dsa1.array;
 
 public class IntegerReversion {
     public int reverse(int n) {//n>0

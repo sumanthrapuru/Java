@@ -1,4 +1,4 @@
-package dsa.queue;
+package balazs.dsa1.queue;
 
 import java.util.Stack;
 

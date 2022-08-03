@@ -1,4 +1,4 @@
-package dsa.list;
+package balazs.dsa1.list;
 
 import java.util.Comparator;
 

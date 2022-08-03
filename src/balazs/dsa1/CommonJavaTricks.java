@@ -1,4 +1,4 @@
-package dsa;
+package balazs.dsa1;
 
 import java.util.Arrays;
 

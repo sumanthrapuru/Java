@@ -1,4 +1,4 @@
-package dsa.list;
+package balazs.dsa1.list;
 
 public class LinkedListImpl<T extends Comparable<T>> implements List<T> {
 

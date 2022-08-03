@@ -1,4 +1,4 @@
-package dsa.stack;
+package balazs.dsa1.stack;
 
 import java.util.Stack;
 

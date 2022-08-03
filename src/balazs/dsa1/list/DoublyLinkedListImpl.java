@@ -1,4 +1,4 @@
-package dsa.list;
+package balazs.dsa1.list;
 
 public class DoublyLinkedListImpl<T extends Comparable<T>> {
     private Node<T> head;

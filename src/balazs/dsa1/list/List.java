@@ -1,4 +1,4 @@
-package dsa.list;
+package balazs.dsa1.list;
 
 public interface List<T> {
     public void insert(T data);
