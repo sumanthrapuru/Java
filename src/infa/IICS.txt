@@ -1,0 +1,93 @@
+List of Oracle Dependent Labs
+Lab 2-4: Creating an Oracle connection
+Lab 3-3: Creating a Data Transfer Task
+Lab 5-1: Using Query in a Mapping
+Lab 5-3: Creating a mapping using Unconnected Lookup Transformation
+Lab 6-3: Using In-Out Parameters for Incremental Data Loading
+Lab 11-1: Passing in-out Parameters in a Taskflow
+
+0. course introduction
+    install oracle, kafka, zookeeper
+
+1. Informatica Cloud Overview
+    Enterprise data management through cloud services(data integration, administrator, monitor services)
+    IICS is iPaaS (integration Platform as a Service)
+    Terminologies
+    IICS architecture
+    Data Integration assets and components
+    Cloud mapping designer (data integration loads)
+    IICS Repository
+        connection info
+        source target metadata
+        mappings
+        schedules
+        logging and monitoring information
+
+    Assets
+        Tasks
+            Mapping Task
+                process data based on data flow logic
+            Synchronization Task
+            Masking Task
+                masks source data - useful for testing
+            Replication Task
+                backup
+            PowerCenter Task
+                import power center workflow so as to run as cloud data integration task
+            Data Transfer Task
+                filter data
+        Mappings
+            Mapping
+                create a mapping use it in mapping tasks
+            Elastic Mapping
+                uses for large data integration
+        Mapplets
+            Mapplet
+                reusable transformation that can be reused in mapping
+            Mapplet - power center import
+            mapplet - SAP
+
+        Taskflows
+            Taskflow
+                conditional flow logic to run multiple data integration tasks
+            Liner Taskflow
+            Parallel Tasks
+            Parallel Tasks with decision
+            Sequential Tasks
+            Sequential Tasks with decision
+
+        Components
+            Business Services
+                Web Service Transformation
+            Saved Query
+                SQL Query
+            Hierarchical Schema
+            Intelligent Structure model
+                No structure data => structure parser transformation
+            Fixed width file format
+            Visio template
+                visio template to transformation logic in mapping task
+            User defined functions
+            Shared Sequence
+            File Listener
+
+2. Runtime environments and connections
+    runtime environment
+        Hosted agent(maintains cloud hosted env and agents)
+        Secure agent(download into your env)
+        Serverless runtime environment
+    secure agent architecture(secure agent runs locally and connects to business api)
+    secure agent log files
+        session log C:\Program Files\Informatica Cloud Secure Agent\apps\Data_Integration_Server\logs
+        error log C:\Program Files\Informatica Cloud Secure Agent\apps\Data_Integration_Server\data\error
+        success log(if enabled) C:\Program Files\Informatica Cloud Secure Agent\apps\Data_Integration_Server\data\success
+        infaagent (n/w connectivity) log C:\Program Files\Informatica Cloud Secure Agent\apps\agentcore\infaagent.log
+        tomcat log(req res from integration server) C:\Program Files\Informatica Cloud Secure Agent\apps\Data_Integration_Server\logs\tomcat
+
+    define connection
+        salesforce
+        flat file
+        oracle
+    types of connectors(native & add on connections)
+
+3.
