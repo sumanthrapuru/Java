@@ -90,4 +90,30 @@ Lab 11-1: Passing in-out Parameters in a Taskflow
         oracle
     types of connectors(native & add on connections)
 
-3.
+3. Synchronization Task and Data transfer Task
+    Synchronization Task
+        integrate data between different sources
+        csv file to account object in salesforce
+        read data ; apply filter ; transform data
+        steps
+            1. definition
+                insert operation
+                    one time load of data
+
+                update operation
+                upsert operation
+                delete operation
+            2. Source
+                single
+                multiple
+                saved query
+            3. Target
+            4. Data Filter
+                Simple Filter
+                Advanced Filter
+
+            5. Field Mapping
+                use exact name
+                field properties
+                refresh fields
+                edit types and validate mapping
