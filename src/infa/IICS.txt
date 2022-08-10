@@ -116,4 +116,113 @@ Lab 11-1: Passing in-out Parameters in a Taskflow
                 use exact name
                 field properties
                 refresh fields
-                edit types and validate mapping
+                edit field types and validate mapping
+                field expressions
+                    multiple source field to one target field
+                    change format
+                    data cleanup like trimming
+                field lookup
+                    lookup return value. return multiple value or error
+            6. Schedules
+                schedule step of task wizard
+                this can also be done in administrator service
+            Additional steps
+                emails
+                pre and post processing commands
+                execution mode for synchronization task - standard verbose
+
+    Synchronization Task using filters, expression, lookup
+        filter Department != sales
+        firstname from full name
+        lookup
+
+    Data Transfer
+        from oracle to flat file
+
+4. Cloud Mapping Designer
+    Define Mapping
+    Explain Field Rules
+    Define Mapping Tasks
+    Discuss Schema Handling
+
+    Mapping lifecycle
+        Design a mapping
+        Run and test(enter values for parameters)
+        Run as part of task flow
+
+    Mapping Types
+        Mapping
+        Elastic Mapping
+
+    Create sample mapping
+        Source -> Filter -> Target
+
+        Field Rules
+            Renaming
+            Selection
+    Mapping Task
+        optionally we can define
+            parameters associated for mapping
+            schedule
+            pre and post processing
+    Schema change handling
+        Asynchronous (when you edit mapping or IICS versin upgraded)
+        Dynamic everytime task runs
+
+5. Cloud Mapping Designer - Transformations
+    Define Transformation
+        Modifies data in mapping step and gives it to next step
+        Active Transformation changes no of rows
+            Ex filter Transformation
+                Simple Filter
+                Advanced Filter
+        Passive Transformation no change to no of rows
+            Ex Expression Transformation
+                Expression Field: can be used in downstream
+                Variable Field: can't be used in downstream
+        Transformation types
+            Source Transformation
+            Target
+            Rank
+            Data Masking
+            Union
+            SQL Transformation
+            Joiner Transformation
+            Sorter
+            Router
+            Lookup Transformation
+            Aggregator Transformation
+
+            Union vs Join Transformation
+
+        Mapplet Transformation
+    Mapplets
+    Use Query in Mapping
+        products orders ; normal shipping expedited shipping
+        Source oracle define Query
+        Select another source
+        use joiner transformation
+        use expression transformation    use expression transformation
+            variable field PPU               variable field PPU
+            variable field QTY               variable field QTY
+            output field total               output field total
+        filter                           filter < 1000
+        target                           target
+
+    Lookup Transformation
+        lookup object
+        lookup connection
+        lookup condition
+        return values
+
+        Connected lookup vs unconnected lookup
+
+    Aggregator Transformation
+        Annual sales, quarterly average
+    Normalizer Transformation
+        one input row to multiple output rows
+
+    Mapplet
+
+
+
