@@ -1,0 +1,60 @@
+How to merge feature branch with master
+git checkout master 
+From master git merge zseller-64-bug 
+
+git pull origin idempotency-return
+
+git reset --head origin/idempotency-return 
+
+How to deal with merging of idempotency-return with idempotency-return
+git rebase -i head~2(consider last 2 commits)
+git rebase master
+git push origin idempotency-return -f
+
+--soft remove the commit in bit bucket but keep code locally Then  we have to commit and force push manually
+git push -f origin idempotency-return 
+--hard remove code locally also
+git reset --soft master
+
+Take commit id of master
+git rebase -i a810fe67c0a2aad9400f68ba629bdda6cc975a27
+
+
+How to find all executed commands
+
+History
+
+history | grep "git rebase"
+
+alias | grep 'git push'
+
+git status | gst
+git checkout master | gym
+gaa add all to tracking
+gc! --no-edit Edit current commit
+Gc! | git commit --amend
+gpsup -f push to upstream forcefully
+
+git log
+git show commit id --name-only
+
+git fetch -all 
+gst
+git pull origin master
+git checkout brands 
+git rebase master
+
+Git push -d origin branch-name
+Git branch -D branch-name
+
+
+
+Sbt
+projects
+Project client
+publishLocal or publish
+
+
+
+Command to hard refresh
+Cmd + shift + R
